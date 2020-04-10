@@ -1,0 +1,45 @@
+{
+  "name": "check-npm-yarn",
+  "version": "1.0.1",
+  "description": "CLI to check NPM or Yarn if specified, or look for package-lock.json or yarn.lock",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "tsconfig.json"
+  ],
+  "bin": {
+    "check-npm-yarn": "lib/cli.js"
+  },
+  "scripts": {
+    "prepack": "tsc",
+    "test": "if command -v check-npm-yarn > /dev/null; then check-npm-yarn; fi"
+  },
+  "keywords": [
+    "npm",
+    "yarn"
+  ],
+  "author": {
+    "email": "patarapolw@gmail.com",
+    "name": "Pacharapol Withayasakpunt",
+    "url": "https://polvcode.dev"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "is-npm": "^4.0.0",
+    "log-symbols": "^3.0.0",
+    "meow": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.11.1",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "typescript": "^3.8.3"
+  }
+}
