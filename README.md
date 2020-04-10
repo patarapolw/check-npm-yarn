@@ -22,3 +22,13 @@ This is supposed to be used as a pre-install script, as follows in `package.json
   }
 }
 ```
+
+Or
+
+```json
+{
+  "scripts": {
+    "preinstall": "npx check-npm-yarn"
+  }
+}
+```
