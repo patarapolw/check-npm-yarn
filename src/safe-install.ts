@@ -17,17 +17,23 @@ if (isNpm) {
   spawnSync('npm', [
     'install',
     ...process.argv.slice(scriptIndex + 1)
-  ])
+  ], {
+    stdio: 'inherit'
+  })
 } else if (isYarn) {
   spawnSync('yarn', [
     'add',
     ...process.argv.slice(scriptIndex + 1)
-  ])
+  ], {
+    stdio: 'inherit'
+  })
 } else if (isPnpm) {
   spawnSync('pnpm', [
     'add',
     ...process.argv.slice(scriptIndex + 1)
-  ])
+  ], {
+    stdio: 'inherit'
+  })
 } else {
   console.log('Please run install using your favorite package manager.')
 }

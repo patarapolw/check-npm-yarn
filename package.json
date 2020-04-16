@@ -1,6 +1,6 @@
 {
   "name": "check-npm-yarn",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "CLI to check NPM or Yarn if specified, or look for package-lock.json or yarn.lock",
   "main": "lib/index.js",
   "files": [
@@ -44,7 +44,7 @@
     "typescript": "^3.8.3"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/patarapolw/check-npm-yarn.git"
+    "type": "git",
+    "url": "https://github.com/patarapolw/check-npm-yarn.git"
   }
 }

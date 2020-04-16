@@ -23,14 +23,10 @@ export function checkNpmYarn (inputAgent: string = '', opts: any = {}) {
     if (!opts.quiet) {
       console.log(`${logSymbols.success} Feel free to use NPM or Yarn`)
     }
-
-    process.exit(0)
   } else if (typeSpecified === typeChecked) {
     if (!opts.quiet) {
       console.log(`${logSymbols.success} You are using ${typeSpecified}`)
     }
-
-    process.exit(0)
   } else {
     if (!opts.quiet) {
       console.log(`${logSymbols.error} You are not using ${typeSpecified}`)
