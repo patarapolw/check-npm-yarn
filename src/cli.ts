@@ -4,7 +4,7 @@ import fs from 'fs'
 import meow from 'meow'
 import logSymbols from 'log-symbols'
 
-const userAgent = (process.env.npm_config_user_agent || '').split('/') || 'unknown'
+const userAgent = (process.env.npm_config_user_agent || '').split('/')[0] || 'unknown'
 
 const { input, flags } = meow(`
   Usage
