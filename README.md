@@ -33,6 +33,16 @@ Or
 }
 ```
 
+## Caveat
+
+- [preinstall npm hook doesn’t execute when installing a specific package](https://npm.community/t/preinstall-npm-hook-doesnt-execute-when-installing-a-specific-package/2505)
+  - So, I created another cli script, `nsi`. Try this,
+
+```sh
+npm install -g check-npm-yarn
+nsi packageA packageB packageC ...
+```
+
 ## How
 
 This uses <https://github.com/sindresorhus/is-npm>

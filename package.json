@@ -1,6 +1,6 @@
 {
   "name": "check-npm-yarn",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "CLI to check NPM or Yarn if specified, or look for package-lock.json or yarn.lock",
   "main": "lib/index.js",
   "files": [
@@ -9,7 +9,8 @@
     "tsconfig.json"
   ],
   "bin": {
-    "check-npm-yarn": "lib/cli.js"
+    "check-npm-yarn": "lib/cli.js",
+    "nsi": "lib/safe-install.js"
   },
   "scripts": {
     "prepack": "tsc",
@@ -41,5 +42,9 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "typescript": "^3.8.3"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/patarapolw/check-npm-yarn.git"
   }
 }
