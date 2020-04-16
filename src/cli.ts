@@ -34,9 +34,9 @@ if (isPnpm) {
   // https://pnpm.js.org/en/limitations
   typeChecked = 'pnpm'
 } else if (isNpm && !isYarn) {
-  typeChecked = 'yarn'
-} else if (isYarn && !isNpm) {
   typeChecked = 'npm'
+} else if (isYarn && !isNpm) {
+  typeChecked = 'yarn'
 }
 
 if (!typeChecked && !input[0]) {
