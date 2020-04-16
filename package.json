@@ -1,6 +1,6 @@
 {
   "name": "check-npm-yarn",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "CLI to check NPM or Yarn if specified, or look for package-lock.json or yarn.lock",
   "main": "lib/index.js",
   "files": [
@@ -13,7 +13,8 @@
   },
   "scripts": {
     "prepack": "tsc",
-    "test": "if command -v check-npm-yarn > /dev/null; then check-npm-yarn; fi"
+    "test": "if command -v check-npm-yarn > /dev/null; then check-npm-yarn; fi",
+    "agent": "node agent.js"
   },
   "keywords": [
     "npm",
@@ -26,7 +27,6 @@
   },
   "license": "ISC",
   "dependencies": {
-    "is-npm": "^4.0.0",
     "log-symbols": "^3.0.0",
     "meow": "^6.1.0"
   },

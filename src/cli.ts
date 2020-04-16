@@ -3,7 +3,8 @@ import fs from 'fs'
 
 import meow from 'meow'
 import logSymbols from 'log-symbols'
-import { isNpm, isYarn } from 'is-npm'
+
+const userAgent = (process.env.npm_config_user_agent || '').split('/') || 'unknown'
 
 const { input, flags } = meow(`
   Usage
@@ -22,7 +23,7 @@ const { input, flags } = meow(`
   }
 })
 
-const typeSpecified = input[0] || (isNpm ? 'npm' : isYarn ? 'yarn' : '')
+const typeSpecified = input[0] || userAgent
 const typeChecked = fs.existsSync('package-lock.json') ? 'npm' : fs.existsSync('yarn.lock') ? 'yarn' : ''
 
 if (!typeChecked && !input[0]) {
@@ -33,13 +34,13 @@ if (!typeChecked && !input[0]) {
   process.exit(0)
 } else if (typeSpecified === typeChecked) {
   if (!flags.quiet) {
-    console.log(`${logSymbols.success} You are using ${typeChecked}`)
+    console.log(`${logSymbols.success} You are using ${typeSpecified}`)
   }
 
   process.exit(0)
 } else {
   if (!flags.quiet) {
-    console.log(`${logSymbols.error} You are not using ${typeChecked || 'unknown'}`)
+    console.log(`${logSymbols.error} You are not using ${typeSpecified}`)
   }
 
   process.exit(2)
