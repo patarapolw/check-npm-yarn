@@ -32,3 +32,7 @@ Or
   }
 }
 ```
+
+## How
+
+This uses <https://github.com/sindresorhus/is-npm>
