@@ -24,7 +24,10 @@ const { input, flags } = meow(`
 })
 
 const typeSpecified = input[0] || userAgent
-const typeChecked = fs.existsSync('package-lock.json') ? 'npm' : fs.existsSync('yarn.lock') ? 'yarn' : ''
+const typeChecked = fs.existsSync('package-lock.json') ? 'npm'
+  : fs.existsSync('yarn.lock') ? 'yarn'
+    : fs.existsSync('store.json') ? 'pnpm' // https://pnpm.js.org/en/about-package-store#storejson
+      : ''
 
 if (!typeChecked && !input[0]) {
   if (!flags.quiet) {
