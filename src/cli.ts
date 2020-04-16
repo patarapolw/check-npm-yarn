@@ -22,8 +22,8 @@ const { input, flags } = meow(`
   }
 })
 
-const typeSpecified = input[0] || (isNpm ? 'npm' : isYarn ? 'yarn' : 'unknown')
-const typeChecked = fs.existsSync('package-lock.json') ? 'npm' : fs.existsSync('yarn.lock') ? 'yarn' : 'unknown'
+const typeSpecified = input[0] || (isNpm ? 'npm' : isYarn ? 'yarn' : '')
+const typeChecked = fs.existsSync('package-lock.json') ? 'npm' : fs.existsSync('yarn.lock') ? 'yarn' : ''
 
 if (!typeChecked && !input[0]) {
   if (!flags.quiet) {
@@ -39,7 +39,7 @@ if (!typeChecked && !input[0]) {
   process.exit(0)
 } else {
   if (!flags.quiet) {
-    console.log(`${logSymbols.error} You are not using ${typeChecked}`)
+    console.log(`${logSymbols.error} You are not using ${typeChecked || 'unknown'}`)
   }
 
   process.exit(2)
