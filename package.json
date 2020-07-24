@@ -29,7 +29,7 @@
   "license": "ISC",
   "dependencies": {
     "log-symbols": "^3.0.0",
-    "meow": "^6.1.0"
+    "meow": "^6.1.1"
   },
   "devDependencies": {
     "@types/node": "^13.11.1",
